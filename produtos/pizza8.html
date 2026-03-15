@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br" translate="no">
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+  <meta name="google" content="notranslate">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/jpg" href="../images/pizzaria.jpg">
+  <title>Pizzaria Barbosa - Faça seu pedido!</title>
+  <meta name="description" content="Faça seu pedido online na Pizzaria Barbosa. Acesse e peça agora pelo delivery food!">
+  <link type="text/css" href="../css/delivry.css" rel="stylesheet">
+  <style type="text/css">
+    h1, h2 { color: #028b49; }
+    header#topo .cover { background-color: #028b49; }
+    header#topo .info h1 { color: #028b49; }
+    header#topo .info .icones a { color: #028b49; border-color: #028b49; }
+    header#topo .cover .logo { background: #028b49; }
+    header#topo #menuCategorias { background: #028b49; }
+    header#topo .categorias a { border-top-color: #028b49; }
+    footer { background: #028b49; }
+    footer#carrinho .container .icone span { color: #028b49; }
+    .btn, a.voltar, .btnSair, .btnFidelidade, .btnGoogle, .btnEmail, .btnSemCadastro { background: #028b49; }
+    .qtdeProduto i:hover { color: #028b49; }
+    .lista .item .col .nomeProduto { color: #028b49; }
+    main#lista .produtos .item a:hover { border: 2px solid #028b49; }
+    #pedido .entrega .radio label input[type="radio"]:checked,
+    #pedido .entrega .radio label:hover { background: #028b49; }
+    #pedido .pagamentos input[type="radio"]:checked + label::before,
+    #detalhesProduto .info2 .opcoes input[type="checkbox"]:checked + label::before,
+    #pedido .trocarPontos input[type="checkbox"]:checked + label::before { background-color: #028b49; border: 2px solid #028b49; }
+    .selecionado { border: 2px solid #028b49; }
+    #meuCarrinho button.fechar, #rastreamento .registro span.passou { background: #028b49; }
+    span.estoque i { color: #028b49; }
+  </style>
+  <meta name="theme-color" content="#028b49">
+  <meta name="apple-mobile-web-app-capacity" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar" content="#028b49">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#028b49">
+  <meta name="apple-mobile-web-app-title" content="Pizzaria Barbosa">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  <div id="opacidade" class="fechar"></div>
+  <div>
+    <div class="container containerFinalizar">
+      <a class="voltar" href="../index.html" title="Voltar"><i class="fa-solid fa-chevron-left"></i> VOLTAR</a>
+      <div id="detalhesProduto">
+
+        <!-- INFO 1 -->
+        <div class="info1">
+          <div class="somarAoPreco" style="display:none">s</div>
+          <div class="fotoProduto">
+            <figure>
+              <img src="../images/2 Pizzas G + Refri 2L.jpg" width="300px" height="300px" alt="2 Pizzas G + Refri 2L">
+            </figure>
+          </div>
+          <div class="descricao">
+            <span style="color:#028b49;background:#e8f5e9;padding:3px 8px;border-radius:8px;font-weight:bold;font-size:13px;display:inline-block;margin-bottom:6px;">-12%</span>
+            <h3>2 Pizzas G + Refri 2L</h3>
+            <span class="detalhe">A escolha ideal para dividir e aproveitar muito sabor. Duas pizzas tamanho G, com massa macia por dentro, bordas douradas e recheio caprichado, preparadas na hora. Acompanha refrigerante de 2 litros para completar a refeição.</span>
+            de <span class="precoPromocao">R$ 59,90</span> por
+            <span class="preco">R$ 52,90<span style="display:none">52.90</span></span>
+            <span class="estoque"><i class="fa-solid fa-circle-down"></i> apenas 18 combos disponíveis</span>
+          </div>
+        </div>
+
+        <!-- INFO 2 -->
+        <div class="info2">
+
+          <!-- BORDA -->
+          <div id="complementos-gratis" class="tipo" data-maximo="1" data-grupo="borda">
+            <div class="topo">
+              <div><h3>ESCOLHA SUA BORDA</h3><span class="detalhe"> Escolha até 1 opção </span></div>
+              <div class="col2"><span class="escolhidos"><span class="contador">0</span>/1</span><i class="fa-solid fa-circle-check" style="display:inline"></i></div>
+            </div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>SEM BORDA RECHEADA</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Pizza sem borda recheada.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>BORDA DE CATUPIRY (ORIGINAL)</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">A mais clássica, feita com requeijão cremoso Catupiry original.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>BORDA DE REQUEIJÃO</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Borda recheada com requeijão cremoso.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>BORDA DE CHEDDAR</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Recheada com queijo cheddar, sabor mais marcante.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>BORDA DE CHOCOLATE BRANCO</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Borda recheada com chocolate branco derretido.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>BORDA DE CHOCOLATE</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Perfeita para pizzas doces, com chocolate ao leite ou meio amargo.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+          </div>
+
+          <!-- ESCOLHA SUA PIZZA -->
+          <div id="complementos-gratis" class="tipo" data-maximo="2" data-grupo="pizza">
+            <div class="topo">
+              <div><h3>ESCOLHA SUA PIZZA</h3><span class="detalhe"> Escolha até 2 opções </span></div>
+              <div class="col2"><span class="escolhidos"><span class="contador">0</span>/2</span><i class="fa-solid fa-circle-check" style="display:inline"></i></div>
+            </div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>FRANGO</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Frango desfiado temperado com molho de tomate e mussarela.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>FRANGO COM CATUPIRY</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Frango desfiado temperado com catupiry cremoso.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>CALABRESA ACEBOLADA</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Molho de tomate, mussarela, calabresa fatiada e cebola.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>CALABRESA MOÍDA</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Molho de tomate, mussarela e calabresa moída temperada.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>PORTUGUESA</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Molho de tomate, mussarela, presunto, ovo, cebola, pimentão e azeitona.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>MUSSARELA</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Molho de tomate e bastante queijo mussarela.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>PEPPERONI</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Molho de tomate, mussarela e pepperoni fatiado.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>4 QUEIJOS</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Mussarela, parmesão, provolone e gorgonzola.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>MARGUERITA</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Molho de tomate, mussarela, tomate e manjericão fresco.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>BACON</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Molho de tomate, mussarela e bastante bacon crocante.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>CARNE SECA COM CATUPIRY</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Carne seca desfiada combinada com catupiry cremoso.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>CAMARÃO</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Camarão temperado com molho de tomate e mussarela. <b style="color:#028b49">+ R$ 3,90</b><span style="display:none">3.90</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>BACON DEFUMADO ESPECIAL</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Bacon defumado premium com mussarela. <b style="color:#028b49">+ R$ 2,90</b><span style="display:none">2.90</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>CARNE DE SOL DESFIADA</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Carne de sol desfiada com mussarela e catupiry. <b style="color:#028b49">+ R$ 3,90</b><span style="display:none">3.90</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+          </div>
+
+          <!-- PIZZA DOCE -->
+          <div id="complementos-gratis" class="tipo" data-maximo="2" data-grupo="doce">
+            <div class="topo">
+              <div><h3>ESCOLHA SUA PIZZA DOCE</h3><span class="detalhe"> Escolha até 2 opções </span></div>
+              <div class="col2"><span class="escolhidos"><span class="contador">0</span>/2</span><i class="fa-solid fa-circle-check" style="display:inline"></i></div>
+            </div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>CHOCOLATE COM MORANGO</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Cobertura de chocolate ao leite com morangos frescos fatiados.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>BANANA NEVADA</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Banana fatiada com leite condensado e coco ralado.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>CHOCOLATE BRANCO</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Cobertura de chocolate branco derretido.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>DOCE DE LEITE COM BANANA</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Doce de leite cremoso com banana fatiada por cima.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>DOCE DE LEITE</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Cobertura generosa de doce de leite cremoso.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>BANANA COM CHOCOLATE</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Banana fatiada com cobertura de chocolate ao leite.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>CHOCOLATE</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Cobertura de chocolate ao leite com leite condensado.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+          </div>
+
+          <!-- REFRIGERANTE -->
+          <div id="complementos-gratis" class="tipo" data-maximo="1" data-grupo="refri">
+            <div class="topo">
+              <div><h3>ESCOLHA SEU REFRIGERANTE</h3><span class="detalhe"> Escolha até 1 opção </span></div>
+              <div class="col2"><span class="escolhidos"><span class="contador">0</span>/1</span><i class="fa-solid fa-circle-check" style="display:inline"></i></div>
+            </div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>COCA COLA</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Refrigerante clássico, sabor refrescante e famoso mundialmente.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>COCA COLA ZERO</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Coca-Cola sem açúcar, mesmo sabor clássico.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>FANTA LARANJA</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Sabor cítrico e refrescante, uma das preferidas para acompanhar comidas.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+            <div class="opcoes"><div class="desc" style="width:100%;flex-direction:row;align-items:center"><span class="nome" style=""><b>GUARANÁ</b><span class="detalheOpcao" style="padding-right:10px"></span><span class="preco">Refrigerante de guaraná com sabor único e tradicional.<span style="display:none">0.00</span></span></span><div class="qtdeProdutoOpcao"><button class="removerQtdeOpcao" onclick="remover(this)" aria-label="Remover"><i class="fa-solid fa-minus"></i></button><input class="qtdeOpcao" type="text" value="0" min="0" size="3" disabled=""><button class="adicionarQtdeOpcao" onclick="adicionar(this)" aria-label="Adicionar"><i class="fa-solid fa-plus"></i></button></div></div></div>
+          </div>
+
+          <label>Observações (opcional)</label>
+          <input class="observacao" type="text" placeholder="Escreva suas observações aqui ..." maxlength="200" oninput="document.getElementById('contObs').textContent=this.value.length">
+          <em><span id="contObs">0</span>/200</em>
+        </div>
+
+        <!-- INFO 3 -->
+        <div class="info3">
+          <input id="idProduto" type="hidden" name="idProduto" value="12118">
+          <div id="precoProduto">R$ 52,90</div>
+          <span class="precoProduto" style="display:none">52.90</span>
+          <button class="btn adicionarProduto" onclick="finalizar()">FINALIZAR PEDIDO</button>
+          <a href="https://link.conta.skalepay.com.br/pY5zsrTxIV" id="finalizarPedido" style="display:none"></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function getTipo(btn) { return btn.closest('.tipo'); }
+    function getTotal(tipo) {
+      let t = 0;
+      tipo.querySelectorAll('.qtdeOpcao').forEach(i => { t += parseInt(i.value) || 0; });
+      return t;
+    }
+    function atualizarContador(tipo) {
+      tipo.querySelector('.contador').textContent = getTotal(tipo);
+    }
+    function adicionar(btn) {
+      const tipo = getTipo(btn);
+      const max = parseInt(tipo.getAttribute('data-maximo'));
+      if (getTotal(tipo) >= max) {
+        Swal.fire({ toast: true, position: 'top', icon: 'warning', title: `Máximo de ${max} opção(ões) neste grupo!`, showConfirmButton: false, timer: 2000, timerProgressBar: true });
+        return;
+      }
+      const input = btn.previousElementSibling;
+      input.value = parseInt(input.value) + 1;
+      atualizarContador(tipo);
+    }
+    function remover(btn) {
+      const tipo = getTipo(btn);
+      const input = btn.nextElementSibling;
+      if (parseInt(input.value) <= 0) return;
+      input.value = parseInt(input.value) - 1;
+      atualizarContador(tipo);
+    }
+    function finalizar() {
+      Swal.fire({
+        title: "Deseja que entregamos agora?",
+        showDenyButton: true, showCancelButton: false, allowOutsideClick: false,
+        icon: "question", confirmButtonText: "Sim, por favor!",
+        confirmButtonColor: "#028b49", denyButtonText: "Não, quero agendar a entrega!", focusConfirm: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "../checkout.html?produto=pizza8";
+        } else if (result.isDenied) {
+          Swal.fire({
+            title: "Selecione o dia e a hora, por gentileza!",
+            text: "Deixe seu pedido agendado e receba na hora combinada.",
+            confirmButtonText: "Agendar pedido!", confirmButtonColor: "#028b49",
+            showCancelButton: false, allowOutsideClick: false, input: "datetime-local",
+          }).then(() => { window.location.href = "../checkout.html?produto=pizza8"; });
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
